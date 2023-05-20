@@ -1,8 +1,8 @@
-InsertSort.java:
+MyProgram.java:
 ---------------
 import java.util.Scanner;
 
-public class InsertSort
+public class MyProgram
 {
     public static void main(String[] args)
     {
@@ -66,94 +66,7 @@ public class InsertSort
     }
 }
 
-LISP.java:
----------
-import java.util.Scanner;
 
-public class LISP {
-    public static void main(String[] args) {
-        
-        Scanner in = new Scanner (System.in);
-        Scanner option = new Scanner (System.in);
-        System.out.println("Do you want a stack or queue? s=stack, q=queue");
-        String choice = in.nextLine();
-        boolean dataStructure = false;
-        LinkedList myList = null;
-        String data = "queue";
-        if(choice.equals("s")){
-            dataStructure = true;
-            data = "stack";
-        }
-        int select = 0;
-        int counter = 1;
-       
-        while (select != 6){
-             System.out.println("Pick an option:");
-        System.out.println("1 = Push, 2 = Pop, 3 = Display, 4 = Check in list, 5 = Reverse, 6 = Quit");
-        System.out.println("You have currently selected a " + data);
-        select = option.nextInt();       
-            if(select == 1){
-                System.out.println("Please enter your value");
-                int val = in.nextInt();
-                if(counter == 1){
-                   myList = new LinkedList(val); 
-                   counter++;
-                }else{
-                    if(myList == null){
-                        myList = new LinkedList(val);
-                    }else{
-                   myList.push(val);
-                    }
-                }
-                System.out.println("Sucessfully pushed value into the data strucutre");
-            }else if(select == 2){
-                if(counter == 1){
-                    System.out.println("No values in the " + data + " to pop");
-                }else{
-               myList.pop(dataStructure); 
-                System.out.println("Sucessfully popped value from the data structure");
-                }
-            }else if(select == 3){
-                if(counter == 1){
-                    System.out.println("No list to display");
-                }else{
-                myList.show();
-                }
-            }else if(select == 4){
-                if(counter == 1){
-                   System.out.println("No values to search for in the " + data); 
-                }else{
-               System.out.println("Enter the value you want to search for:");
-               int val = in.nextInt();
-               if(myList.checkList(val) == false){
-                   System.out.println("That value was not found in the " + data);
-               }
-             }
-            }else if(select == 5){
-                if(counter == 1){
-                    System.out.println("No values to reverse");
-                }else{
-                    if(myList == null){
-                        System.out.println("No values to reverse");
-                    }else{
-                myList = myList.reverse();
-                    }
-                }
-                
-            }else if(select != 6){
-                
-                System.out.println("That is not a valid option");
-            }
-            
-            
-            
-        }
-        
-        
-        
-        
-    }
-}
 
 LinkedList.java:
 ---------------
